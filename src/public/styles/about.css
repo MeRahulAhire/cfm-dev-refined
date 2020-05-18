@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.about-top{
+    height: 92vh;
+    width: 100%;
+}
+.about-top-image{
+    background-image: url("../assets/about-1.webp");
+    background-position:0 -400px;
+    background-size: cover;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center ;
+}
+/* ========================================================================= */
+.vid-demo{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+
+}
+.vid-demo video{
+    z-index: -1;
+    position: absolute;
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.content-wrap{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    text-align: center;
+}
+
+/* =============================================================== */
+
+@media screen and (max-width:1024px){
+    .about-top-image{
+     background-position:0 -200px;
+    }
+    
+}
+@media screen and (max-width:768px){
+    .about-top-image{
+     background-position:0 -100px;
+    }
+    .vid-middle{
+       zoom: 0.5;
+    }
+    .vid-last{
+       zoom: 0.5;
+    }
+}
+@media screen and (max-width:550px){
+    .about-top-image{
+     background-position:top;
+    }
+    
+}
+@media screen and (max-height:450px){
+    .vid-middle{
+       zoom: 0.49;
+       padding-top: 15rem;
+    }
+    .vid-last{
+       zoom: 0.49;
+       padding-top: 20rem;
+    }
+}

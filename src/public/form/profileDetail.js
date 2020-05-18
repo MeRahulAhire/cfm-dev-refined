@@ -1,0 +1,72 @@
+import React, { Component } from 'react';
+import Topbar from './lib-component/topbar';
+import './styles/profileDetail.css';
+
+export class profileDetail extends Component {
+	continue = (e) => {
+		e.preventDefault();
+		this.props.nextStep();
+	};
+
+	back = (e) => {
+		e.preventDefault();
+		this.props.prevStep();
+	};
+	render() {
+		const { values, handleChange, profileImageHandler } = this.props;
+		return (
+			<div>
+				<Topbar />
+				<div className="signup-bg">
+					<div className="signup-container profile-detail">
+						<button onClick={this.back} className="col-form-prev">
+							<i className="fa fa-chevron-left" />
+						</button>
+						<div
+							className="profile-pic"
+							// defaultValue={values.ProfilePic}
+							onChange={handleChange('ProfilePic')}
+						>
+							Add your Profile Picture:
+							<div className="add-picture">
+								<div className="image-preview">
+									<img src={values.ProfilePic} alt="" className="image-preview__image" id="profileImg" />
+								</div>
+
+								<input
+									type="file"
+									name="inpFile"
+									id="inpFile"
+									accept="image/*"
+									onChange={profileImageHandler}
+								/>
+								<div className="label-holder">
+									<label className="image-upload" htmlFor="inpFile">
+										<i className="material-icons">add_photo_alternate</i>
+										Choose your Photo
+									</label>
+								</div>
+							</div>
+						</div>
+						<div className="description">
+							Describe Yourself <br />
+							<textarea
+								maxLength="200"
+								placeholder="Descibe yourself the best as possible under 200 character"
+								onChange={handleChange('Description')}
+								defaultValue={values.Description}
+							/>
+						</div>
+						<div className="btn-next">
+							<button onClick={this.continue} className="col-form-next">
+								<i className="fa fa-chevron-right" />
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		);
+	}
+}
+
+export default profileDetail;

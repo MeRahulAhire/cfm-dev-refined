@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow|Varela|Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400&display=swap');
+.login-bg {
+    height: 92vh;
+	width: 100%;
+	background-image: url("../assets/portrait-of-woman-photographing-with-smart-phone-248021-_1_.webp");
+	background-position: center;
+	background-size: cover;
+	display: flex;
+	align-items: center;
+    justify-content: center;
+    position: absolute;
+    
+}
+
+.login-container {
+	width: 400px;
+	height: 400px;
+	background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 30px;
+    
+}
+
+.login-content h1 {
+	font-family: 'Varela Round', sans-serif;
+	text-align: center;
+	font-weight: bold;
+	padding: 1rem;
+	font-size: 2.5rem;
+}
+.user-detail {
+	font-family: 'Varela Round', sans-serif;
+	margin: 1rem;
+	font-weight: bold;
+	font-size: 1.5rem;
+	margin-top: 0;
+}
+.user-detail input {
+	font-family: 'Lato', sans-serif;
+	width: 100%;
+	height: 40px;
+	background: none;
+	border-radius: 5px;
+	border: 2px black solid;
+	font-size: 1rem;
+	font-weight: thick;
+	padding-left: 1.5rem;
+	color: black;
+    outline: none;
+}
+.forget-password{
+    margin-right: 1rem;
+    font-size: 0.75rem;
+    font-family: 'Lato', sans-serif;
+    text-align: right;
+    cursor: pointer;
+}
+.login-btn{
+    height: 50px;
+    width: 170px;
+    background-color: black;
+    font-family: 'Varela Round', sans-serif;
+    margin: 1rem;
+    margin-top: 10px;
+    text-align: center;
+    border-radius: 45px;
+    border-color: black;
+    color: white;
+    outline: none;
+    cursor: pointer;
+}
+.register{
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.75rem;
+    text-decoration: underline;
+    color: black;
+    margin-top: 2rem;
+
+}
+@media screen and (max-width:550px){
+    .login-container{
+        width: 300px;
+    }
+}
+@media screen and (max-height:550px){
+
+    .login-container{
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
+    
+    .login-bg{
+        height: auto;
+        
+    }
+}

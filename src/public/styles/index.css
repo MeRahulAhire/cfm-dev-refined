@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css?family=Gurajada|Rajdhani|Ubuntu:700&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.head{
+    height: 92vh;
+    width: 100%;
+
+}
+.head-image-container{
+    background-image: url("../assets/img-1.webp");
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center ;
+}
+.content h1{
+    font-family: 'Ubuntu', sans-serif;
+    color: white;
+    font-weight: bold;
+    font-size: 3rem;
+    padding: 1rem;
+
+}
+.content p{
+    font-family: 'Rajdhani', sans-serif;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+}
+/* ============================================================================ */
+.middle{
+    height: 100vh;
+    width: 100%;
+
+}
+.middle-image-container{
+    background-image: url("../assets/img-2.webp");
+    background-position: top;
+    background-size:cover;
+    height: 100%;
+   
+   
+}
+.bg-adjust{
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center ;
+    
+}
+.index-to-about{
+    margin-top:1rem ;
+    background: none;
+    background-color: #512da8;
+    border-radius: 45px;
+    border: 5px #512da8;
+    color: white;
+    width: 150px;
+    height: 75px;
+    font-size: large;
+    cursor: pointer;
+    outline: none;
+}
+/* ======================================================================== */
+.bottom{
+    height: 100vh;
+    width: 100%;
+
+}
+.bottom-image-container{
+    background-image: url("../assets/img-3.webp");
+    background-position: center;
+    background-size:cover;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+   
+   
+}
+
+@media screen and (max-width:500px){
+    .head-image-container{
+        background-position: 0px;
+    }
+    .middle-image-container{
+        background-position: -200px;
+    }
+    .bottom-image-container{
+        background-position: -375px;
+    }
+}
