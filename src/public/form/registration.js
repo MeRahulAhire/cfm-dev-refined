@@ -51,9 +51,16 @@ export class Registration extends Component {
     this.setState({ [input]: e.target.value });
   };
   CollegeNameHandler = () => {
-    this.setState({CollegeName: document.getElementById('pac-input').value})
-    
-    
+    // this.setState({CollegeName: document.getElementsByClassName('pac-item').innerHTML})
+    // setTimeout(this.setState({CollegeName: this.state.address}),10)
+    this.setState({CollegeName: this.state.address})
+
+    // state = { address: '' };
+    // handleChange = (address) => {
+    //   this.setState({ address });
+    // };
+    // this.setState({CollegeName: document.getElementById('pac-input').value})
+
   }
   countryFlagHandler = () =>{
 			const select = document.querySelector('#country');
