@@ -30,7 +30,6 @@
 	font-weight: bold;
 	color: #000;
 	outline: none;
-	/* z-index:2 ; */
 }
 
 .image-preview__image {
@@ -40,13 +39,11 @@
 	display: block;
     object-fit: cover;
     border-radius: 10px;
-    /* z-index: -11; */
 }
 
 
 #inpFile[type="file"] {
 	display: none;
-	/* margin-top: 20px; */
 }
 .label-holder {
 	width: 200px;

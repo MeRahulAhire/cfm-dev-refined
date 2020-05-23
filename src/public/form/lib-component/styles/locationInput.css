@@ -1,7 +1,3 @@
-/* *{
-    margin: 0;
-    padding: 0;
-} */
  .controls{
     font-family: 'Lato', sans-serif;
     width: 100%;
@@ -18,70 +14,4 @@
     height: 40px;
     display: flex;
     align-items: center ;
-}
-
-.typo{
-    font-family: 'Lato', sans-serif;
-    width: 100%;
-    height: 40px;
-    background: none;
-    border-radius: 5px;
-    border: 2px black solid;
-    font-size: 1rem;
-    font-weight:thick;
-    padding-left: 1.5rem;
-    color: black;
-    outline: none;
-   
-}
-.suggestion{
-    font-family: 'Lato', sans-serif;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 100%;
-    height:60px;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-bottom: 1px black dashed;
-    font-size: 1rem;
-    font-weight: bold;
-    /* padding-left: 1.5rem; */
-    outline: none;
-    text-align: left;
-    cursor: pointer;
-    padding-top: 0.5rem;
-}
-.loc_span{
-    /* font-size: 0.5rem; */
-    height: 1.2rem;
-    overflow-y: hidden;
-    width: 80%;
-    display: inline-block;
-}
-.loc_continue{
-    position: relative;
-    text-align: right;
-}
-.loc_marker{
-    margin-left: 10px;
-    margin-right: 10px;
-}
-
-@media screen and (max-width:500px){
-    .suggestion{
-        height: 50px;
-    }
-    .loc_span{
-        width:100%;
-        font-size: 0.75rem;
-        height: 1rem;
-    }
-    .loc_continue{
-        display: none;
-    }
-    .loc_marker{
-        margin-right: 5px;
-        margin-left: 5px;
-    }
-
 }

@@ -24,7 +24,6 @@ export class profileDetail extends Component {
 						</button>
 						<div
 							className="profile-pic"
-							// defaultValue={values.ProfilePic}
 							onChange={handleChange('ProfilePic')}
 						>
 							Add your Profile Picture:

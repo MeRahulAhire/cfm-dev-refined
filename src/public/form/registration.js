@@ -4,6 +4,7 @@ import Credential from './credential'
 import ProfileDetail from './profileDetail'
 import CollegeDetail from './collegeDetail'
 import blankUser from '../assets/blank_user.webp'
+import phoneIcon from '../assets/phone_icon.png'
 // import ReviewForm from './ReviewForm'
 
 export class Registration extends Component {
@@ -20,7 +21,7 @@ export class Registration extends Component {
       DOB:'',
   
       Email:'',
-      CountryFlag:'https://raw.githubusercontent.com/MeRahulAhire/country-calling-code-html/master/phone_icon.png',
+      CountryFlag:phoneIcon,
       CountryCode:'',
       Phone:'',
       Username:'',
@@ -30,7 +31,6 @@ export class Registration extends Component {
       Description:''
     };
 
-  // Proceed to next step
   nextStep = () => {
     const { step } = this.state;
     this.setState({
@@ -38,7 +38,6 @@ export class Registration extends Component {
     });
   };
 
-  // Go back to prev step
   prevStep = () => {
     const { step } = this.state;
     this.setState({
@@ -46,20 +45,20 @@ export class Registration extends Component {
     });
   };
 
-  // Handle fields change
   handleChange = input => e => {
     this.setState({ [input]: e.target.value });
   };
-  CollegeNameHandler = () => {
-    // this.setState({CollegeName: document.getElementsByClassName('pac-item').innerHTML})
-    // setTimeout(this.setState({CollegeName: this.state.address}),10)
-    this.setState({CollegeName: this.state.address})
-
-    // state = { address: '' };
-    // handleChange = (address) => {
-    //   this.setState({ address });
-    // };
-    // this.setState({CollegeName: document.getElementById('pac-input').value})
+  CollegeNameHandler = (e) => {
+    this.setState({CollegeName: this.state.location})
+    const app = this;
+		function initAutocomplete() {
+			var input = document.getElementById('pac-input');
+			var searchBox = new window.google.maps.places.SearchBox(input);
+			searchBox.addListener('places_changed', function() {
+				app.setState({ CollegeName: document.getElementById('pac-input').value });
+			});
+		}
+		initAutocomplete();
 
   }
   countryFlagHandler = () =>{
