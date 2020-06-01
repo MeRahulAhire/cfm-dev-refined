@@ -13,7 +13,7 @@ export class profileDetail extends Component {
 		this.props.prevStep();
 	};
 	render() {
-		const { values, handleChange, profileImageHandler } = this.props;
+		const { values, profileImageHandler,descriptionHandler } = this.props;
 		return (
 			<div>
 				<Topbar />
@@ -22,16 +22,12 @@ export class profileDetail extends Component {
 						<button onClick={this.back} className="col-form-prev">
 							<i className="fa fa-chevron-left" />
 						</button>
-						<div
-							className="profile-pic"
-							onChange={handleChange('ProfilePic')}
-						>
+						<div className="profile-pic">
 							Add your Profile Picture:
 							<div className="add-picture">
 								<div className="image-preview">
 									<img src={values.ProfilePic} alt="" className="image-preview__image" id="profileImg" />
 								</div>
-
 								<input
 									type="file"
 									name="inpFile"
@@ -52,7 +48,7 @@ export class profileDetail extends Component {
 							<textarea
 								maxLength="200"
 								placeholder="Descibe yourself the best as possible under 200 character"
-								onChange={handleChange('Description')}
+								onChange={descriptionHandler}
 								defaultValue={values.Description}
 							/>
 						</div>

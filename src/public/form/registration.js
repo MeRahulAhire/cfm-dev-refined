@@ -5,12 +5,12 @@ import ProfileDetail from './profileDetail'
 import CollegeDetail from './collegeDetail'
 import blankUser from '../assets/blank_user.webp'
 import phoneIcon from '../assets/phone_icon.png'
-// import ReviewForm from './ReviewForm'
+import ReviewForm from './reviewForm'
 
 export class Registration extends Component {
   
       state = {
-      step: 1,
+      step: 5,
       CollegeName: '',
       Branch: '',
       YearOfAdmission: '',
@@ -76,7 +76,9 @@ export class Registration extends Component {
     }
     reader.readAsDataURL(e.target.files[0])
   };
-  
+  descriptionHandler = e => {
+    this.setState({Description : e.target.value})
+  }
   render() {
         const { step } = this.state;
         const {  Branch, CollegeName, YearOfAdmission, FirstName, LastName, Gender, DOB, Email, Phone, CountryFlag, CountryCode, Username, Password, ProfilePic, Description } = this.state;
@@ -118,12 +120,21 @@ export class Registration extends Component {
               prevStep={this.prevStep}
               handleChange={this.handleChange}
               profileImageHandler={this.profileImageHandler}
+              descriptionHandler={this.descriptionHandler}
               values={values}
               />
-            )  
-            case 5: return(
-              <h1 style={{backgroundColor:'black', color:'white', height:'100vh'}}>Thanks for Submitting but we are under Contruction</h1>
             )
+              case 5:
+              return(
+                  <ReviewForm
+                  nextStep={this.nextStep}
+                  prevStep={this.prevStep}
+                  values={values}
+              />
+              )   
+            // case 6: return(
+            //   <h1 style={{backgroundColor:'black', color:'white', height:'100vh'}}>Thanks for Submitting but we are under Contruction</h1>
+            // )
             default:
             return(
               <CollegeDetail

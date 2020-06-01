@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Index from './public/index'
 import About from './public/about'
 import Login from './public/login'
-
 import Registration from './public/form/registration'
 
 export class App extends Component {

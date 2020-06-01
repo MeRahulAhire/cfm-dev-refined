@@ -1,7 +1,7 @@
 {
   "name": "College Facemash",
   "short_name": "CFM",
-  "theme_color": "#512da8",
+  "theme_color": "#000",
   "background_color": "#512da8",
   "display": "standalone",
   "Scope": "/",
@@ -48,5 +48,5 @@
       "type": "image/png"
     }
   ],
-  "splash_pages": null
+  // "splash_pages": null
 }
