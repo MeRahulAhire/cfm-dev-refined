@@ -11,13 +11,13 @@ export class Registration extends Component {
   
       state = {
       step: 5,
-      CollegeName: '',
-      Branch: '',
-      YearOfAdmission: '',
+      CollegeName: 'D Y Patil School Of Engineering Lohegaon, Lohegaon, Pune, Maharashtra, India',
+      Branch: 'Computer Engineering and technology',
+      YearOfAdmission: '2018',
   
-      FirstName: '',
-      LastName: '',
-      Gender: '',
+      FirstName: 'Rahul',
+      LastName: 'Ahire',
+      Gender: 'Male',
       DOB:'',
   
       Email:'',

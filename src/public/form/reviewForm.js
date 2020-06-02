@@ -28,12 +28,12 @@ export class reviewForm extends Component {
 				CountryCode,
 				Phone,
 				Username,
-				Password,
 
 				ProfilePic,
 				Description
 			}
 		} = this.props;
+		const phoneNumber = CountryCode + Phone
 		return (
 			<div className="page">
 				<Topbar />
@@ -46,56 +46,88 @@ export class reviewForm extends Component {
 									<img src={ProfilePic} alt="" className="review-profile-img" />
 								</div>
 							</div>
-							<div className="char-box">
-								<span className="hlg-bold">
-									First Name <span>:</span>{' '}
-								</span>
-								<span className="label-value">{FirstName}</span>
+							<div className="personal-detail">
+								<div className="value-container">
+									<span>First Name</span>
+									<div className="value-holder">
+										{FirstName}
+									</div>
+								</div>
+								<div className="value-container">
+									<span>Last Name</span>
+									<div className="value-holder">
+										{LastName}
+									</div>
+								</div>
 							</div>
-							<div className="char-box">
-								<span className="hlg-bold">Last Name : </span>
-								<span className="label-value">{LastName}</span>
+							<div className="personal-detail">
+								<div className="value-container">
+									<span>Gender</span>
+									<div className="value-holder">
+										{Gender}
+									</div>
+								</div>
+								<div className="value-container">
+									<span>Date of Birth</span>
+									<div className="value-holder">
+										{DOB}
+									</div>
+								</div>
 							</div>
-							<div className="char-box">
-								<span className="hlg-bold">Gender : </span>
-								<span className="label-value">{Gender}</span>
+							<div className="personal-detail-long">
+								<div className="textarea-container">
+									<span>Your College</span>
+									<div className="text-holder">
+										{CollegeName}
+									</div>
+								</div>
 							</div>
-							<div className="char-box">
-								<span className="hlg-bold">Date of Birth : </span>
-								<span className="label-value">{DOB}</span>
+							<div className="personal-detail">
+								<div className="value-container">
+									<span>Branch</span>
+									<div className="value-holder">
+										{Branch}
+									</div>
+								</div>
+								<div className="value-container">
+									<span>Year of Admission</span>
+									<div className="value-holder">
+										{YearOfAdmission}
+									</div>
+								</div>
 							</div>
-							<div className="char-box">
-								<span className="hlg-bold">Your College : </span>
-								<span className="label-value-college">{CollegeName}</span>
+							<div className="personal-detail-long">
+								<div className="textarea-container">
+									<span>Email</span>
+									<div className="text-holder">
+										{Email}
+									</div>
+								</div>
 							</div>
-							<div className="char-box">
-								<span className="hlg-bold">Branch : </span>
-								<span className="label-value">{Branch}</span>
+							<div className="personal-detail">
+								<div className="value-container">
+									<span>Phone Number</span>
+									<div className="value-holder">
+										{phoneNumber}
+									</div>
+								</div>
+								<div className="value-container">
+									<span>Username</span>
+									<div className="value-holder">
+										{Username}
+									</div>
+								</div>
 							</div>
-							<div className="char-box">
-								<span className="hlg-bold">Year of Admission : </span>
-								<span className="label-value">{YearOfAdmission}</span>
+							<div className="personal-detail-long">
+								<div className="textarea-container">
+									<span>Your Description</span>
+									<div className="text-holder">
+										{Description}
+									</div>
+								</div>
 							</div>
-							<div className="char-box">
-								<span className="hlg-bold">Email : </span>
-								<span className="label-value">{Email}</span>
-							</div>
-							<div className="char-box">
-								<span className="hlg-bold">Phone No : </span>
-								<span className="label-value">
-									{CountryCode}
-									{Phone}
-								</span>
-							</div>
-							<div className="char-box">
-								<span className="hlg-bold">Username : </span>
-								<span className="label-value">{Username}</span>
-							</div>
-							<div className="char-box">
-								<span className="hlg-bold">Your Description : </span>
-								<span className="label-value">{Description}</span>
-							</div>
-							<hr />
+							{/* <div className="seperater"></div> */}
+							<hr style={{marginTop:'1rem'}} />
 							<p className="message">
 								For your personal safety we haven't displayed your password here. Make Sure you have
 								choosen a appropriate, strong and a rememberable Password
@@ -109,7 +141,7 @@ export class reviewForm extends Component {
 								Go Back
 							</button>
 							<button className="reg-submit">
-								Sign Up <i class="fa fa-user-plus" />
+								Get Onboard
 							</button>
 						</div>
 					</div>

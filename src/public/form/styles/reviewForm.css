@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&family=Noto+Sans+SC&display=swap');
 .review-page{
     height: 92vh;
     background-image: url('../../assets/portrait-of-woman-photographing-with-smart-phone-248021-_1_.webp');
@@ -63,38 +65,45 @@
     margin-bottom: 1rem;
     position: relative;
 }
-.char-box{
-    margin: 1rem;
-    margin-top: 0.5rem;
-    margin-bottom: 0;
-    min-height: 50px;
-    max-height: auto;
-    /* width: 100%; */
+.personal-detail{
+    width: 100%;
     display: flex;
-    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 1rem;
 }
-.hlg-bold{
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.5rem;
-    font-weight: bold;
+.value-container{
+    min-height: 60px;
+    max-width: auto;
+    width: 40%;
 }
-.label-value{
-    font-family: 'Lato', sans-serif;
-    font-size: 1.2rem;
-    margin-left: 1rem;
-    background-color: #ccc;
-    padding: 0.5rem;
-    border-radius: 10px;
-    
+.value-container span{
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
 }
-.label-value-college{
-    width:100%;
-    font-family: 'Lato', sans-serif;
-    font-size: 1.2rem;
-    margin-left: 1rem;
-    background-color: #ccc;
-    padding: 0.5rem;
-    border-radius: 10px;
+.value-holder{
+    font-family: 'Noto Sans SC', sans-serif;
+    border-bottom: 2px solid black;
+    font-size: 20px;
+}
+.personal-detail-long{
+    /* width: 100%;   */
+    margin-left: 2rem;
+    margin-top: 1rem;
+}
+.textarea-container{
+    width: 100%;
+    height: auto;
+    /* margin: 0; */
+}
+.textarea-container span{
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+}
+.text-holder{
+    font-family: 'Noto Sans SC', sans-serif;
+    border-bottom: 2px solid black;
+    font-size: 20px;
+    width: 90%;
 }
 .message{
     margin: 1rem;
@@ -133,11 +142,10 @@
 .reg-submit{
     background: black;
     height: 50px;
-    width: 120px;
+    width: 150px;
     border: 3px solid black;
     border-radius: 10px;
     outline: none;
-    font-weight: bold;  
     font-size: 1.1rem;
     font-family: 'Poppins', sans-serif;
     color: white;
