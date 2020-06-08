@@ -36,7 +36,7 @@ export class login extends Component {
 		}
 		
 		else {
-			console.log(JSON.stringify(this.state))
+			alert(JSON.stringify(this.state))
 		}
 		
 	}
