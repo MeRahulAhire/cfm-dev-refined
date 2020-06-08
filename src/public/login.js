@@ -10,7 +10,11 @@ export class login extends Component {
 	}
 	usernameHandler = e =>{
 		this.setState({username: e.target.value})
-		document.getElementById('username').style.boxShadow = ""
+		document.getElementById('username').style.boxShadow = "";
+		const spaceRegex = /[ X]/
+		if (!spaceRegex.test(document.getElementById('username').value)){
+			document.getElementById('loginError').style.display = "none"
+		}
 	}
 	passwordeHandler = e =>{
 		this.setState({password: e.target.value});
@@ -19,18 +23,24 @@ export class login extends Component {
 	submitHandler = () => {
 		const username = document.getElementById('username')
 		const password = document.getElementById('password')
+		const spaceRegex = /[ X]/
 		if(username.value === "" && password.value === ""){
-			username.style.boxShadow = "0px 0px 30px 5px rgba(213,0,0,1)"
-			password.style.boxShadow = "0px 0px 30px 5px rgba(213,0,0,1)";
+			username.style.boxShadow = "0px 0px 15px 0px red"
+			password.style.boxShadow = "0px 0px 15px 0px red";
 			navigator.vibrate(100);
 		}
 		else if(username.value === "") {
-			username.style.boxShadow = "0px 0px 30px 5px rgba(213,0,0,1)";
+			username.style.boxShadow = "0px 0px 15px 0px red";
 			navigator.vibrate(100);
 			
 		}
+		else if (spaceRegex.test(username.value)){
+			document.getElementById('loginError').style.display = "block"
+			navigator.vibrate(100);
+
+		}
 		else if (password.value === "") {
-			password.style.boxShadow = "0px 0px 30px 5px rgba(213,0,0,1)";
+			password.style.boxShadow = "0px 0px 15px 0px red";
 			navigator.vibrate(100);
 			
 		}
@@ -56,7 +66,7 @@ export class login extends Component {
 							<h1>Login</h1>
 							<div className="user-detail">
 								Username/Email:
-								<div className="login-error"></div>
+								<div id="loginError" className="login-error">spaces not allowed</div>
 								<input
 								onChange={this.usernameHandler}
 								value={username}
