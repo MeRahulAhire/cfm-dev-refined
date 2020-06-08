@@ -12,6 +12,7 @@ export class credential extends Component {
 		e.preventDefault();
 		this.props.prevStep();
 	};
+	
 
 	render() {
 		const { values, handleChange, countryFlagHandler } = this.props;

@@ -23,7 +23,8 @@ export class userDetail extends Component {
 						</button>
 						<div className="user-detail firstName">
 							First Name:
-							<input
+							<input 
+							    style={{textTransform:'capitalize'}}
 								type="text"
 								placeholder="Enter your First Name"
 								onChange={handleChange('FirstName')}
@@ -33,6 +34,7 @@ export class userDetail extends Component {
 						<div className="user-detail lastName">
 							Last Name:
 							<input
+							 	style={{textTransform:'capitalize'}}
 								type="text"
 								placeholder="Enter your Last Name"
 								onChange={handleChange('LastName')}

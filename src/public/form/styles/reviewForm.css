@@ -111,7 +111,7 @@
     font-family: 'Lato', sans-serif;
 }
 .signup{
-    font-weight: bold;
+    /* font-weight: bold; */
     background-color: black;
     color: white;
     height:auto ;

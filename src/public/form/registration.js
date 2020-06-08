@@ -10,14 +10,14 @@ import ReviewForm from './reviewForm'
 export class Registration extends Component {
   
       state = {
-      step: 5,
-      CollegeName: 'D Y Patil School Of Engineering Lohegaon, Lohegaon, Pune, Maharashtra, India',
-      Branch: 'Computer Engineering and technology',
-      YearOfAdmission: '2018',
+      step: 1,
+      CollegeName: '',
+      Branch: '',
+      YearOfAdmission: '',
   
-      FirstName: 'Rahul',
-      LastName: 'Ahire',
-      Gender: 'Male',
+      FirstName: '',
+      LastName: '',
+      Gender: '',
       DOB:'',
   
       Email:'',
