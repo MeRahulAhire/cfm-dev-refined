@@ -4,66 +4,92 @@ import './styles/collegeDetail.css';
 import LocationInput from './lib-component/locationInput';
 export class collegeDetail extends Component {
 	continue = (e) => {
-		// const { values } = this.props
+		const { values } = this.props
 		const pacInput = document.getElementById('pac-input');
 		const branch = document.getElementById('branch');
-		const yob = document.getElementById('yob');
+		const yoa = document.getElementById('yoa');
+		const yoaError = document.getElementById('yoa-error');
 		// const collegeSpaceErr = document.getElementById('college-space-err')
-		const collegeFormatErr = document.getElementById('college-format')
-		const commaRegex = /[,]/g	
-		const spaceRegex = /[ X]/
-		if (pacInput.value === "" && branch.value === "" && yob.value === ""){
-			pacInput.style.boxShadow = "0px 0px 15px 0px red";
-			branch.style.boxShadow = "0px 0px 15px 0px red";
-			yob.style.boxShadow = "0px 0px 15px 0px red";
+		const collegeFormatErr = document.getElementById('college-format');
+		const commaRegex = /[,]/;
+		// const spaceRegex = /[ X]/
+		const yoaRegex = /[2][0][1-2][0-9]/;
+		if (pacInput.value === '' && branch.value === '' && yoa.value === '') {
+			pacInput.style.boxShadow = '0px 0px 15px 0px red';
+			branch.style.boxShadow = '0px 0px 15px 0px red';
+			yoa.style.boxShadow = '0px 0px 15px 0px red';
+			navigator.vibrate(100);
+		} else if (pacInput.value === '') {
+			pacInput.style.boxShadow = '0px 0px 15px 0px red';
+			navigator.vibrate(100);
+		} else if (!commaRegex.test(pacInput.value)) {
+			collegeFormatErr.style.display = 'block';
+			navigator.vibrate(100);
+		} else if (branch.value === '') {
+			branch.style.boxShadow = '0px 0px 15px 0px red';
+			navigator.vibrate(100);
+		} else if (yoa.value === '') {
+			yoa.style.boxShadow = '0px 0px 15px 0px red';
 			navigator.vibrate(100);
 		}
-		else if(pacInput.value === ""){
-		  pacInput.style.boxShadow = "0px 0px 15px 0px red";
-		  navigator.vibrate(100);
-		}
-		else if (commaRegex.test(pacInput.values)){
-			collegeFormatErr.style.display = "block";
+		 else if(yoa.value < 2015){
+			 yoaError.style.display = "block"
+			 navigator.vibrate(100);
+		 }
+		 else if(yoa.value > new Date().getFullYear()){
+			yoaError.style.display = "block"
+			yoaError.innerHTML = "Please enter current valid year"
 			navigator.vibrate(100);
 		}
-		
-		else{
+		else if(isNaN(yoa.value)){
+			yoaError.style.display = "block"
+			yoaError.innerHTML = "Please only enter numbers"
+		}
+		else {
+			// values.CollgeName = document.getElementById('pac-input').value.trim()
+			document.getElementById('branch').value.trim()
 			e.preventDefault();
-		this.props.nextStep();
+			this.props.nextStep();
 		}
 	};
 	render() {
 		const errorReset = () => {
 			const pacInput = document.getElementById('pac-input');
 			const branch = document.getElementById('branch');
-			const yob = document.getElementById('yob');
+			const yoa = document.getElementById('yoa');
+			const yoaError = document.getElementById('yoa-error');
 			// const collegeSpaceErr = document.getElementById('college-space-err')
-			const collegeFormatErr = document.getElementById('college-format')
-			const commaRegex = /[,]/g
-			const spaceRegex = /[ X]/
-			 if(pacInput.value !== ""){
-				pacInput.style.boxShadow = "";
-							
+			const collegeFormatErr = document.getElementById('college-format');
+			const commaRegex = /,/;
+			// const spaceRegex = /[ X]/
+			if (pacInput.value !== '') {
+				pacInput.style.boxShadow = '';
+			} else if (commaRegex.test(pacInput.value)) {
+				collegeFormatErr.style.display = "none";
+			}
+			if (branch.value !== '') {
+				branch.style.boxShadow = '';
+			}
+			if (yoa.value !== '') {
+				yoa.style.boxShadow = '';
+			}
+			// else if(!isNaN(yoa.value)){
+			// 	yoaError.style.display = "none"
+			// 	// yoaError.innerHTML = "Please only enter numbers"
+			// }
+			else if(yoa.value >= 2015){
+				yoaError.style.display = "none"
+			}
+			else if(yoa.value <= new Date().getFullYear()){
+				yoaError.style.display = "none"
 			}
 			
-			else if (commaRegex.test(pacInput.values) === true){
-				collegeFormatErr.style.display = "none";
-				
-			}
-			if(branch.value !== ""){
-				branch.style.boxShadow = "";
-							
-			}
-			if(yob.value !== ""){
-				yob.style.boxShadow = "";
-							
-			}
 			// else{
 			// 	return null
 			// }
-		}
+		};
 		const { values, handleChange, CollegeNameHandler } = this.props;
-		// this.errorReset()
+		
 		return (
 			<div>
 				<Topbar />
@@ -86,9 +112,10 @@ export class collegeDetail extends Component {
 						</div>
 						<div className="user-detail year-of-admission">
 							Year of Admission?:
+							<div id="yoa-error">sorry you are too old to apply</div>
 							<input
 								type="number"
-								id="yob"
+								id="yoa"
 								placeholder="2017,2018 or 2020?"
 								onChange={handleChange('YearOfAdmission')}
 								defaultValue={values.YearOfAdmission}
