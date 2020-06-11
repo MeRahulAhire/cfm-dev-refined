@@ -61,9 +61,10 @@ export class collegeDetail extends Component {
 			}
 			if (yoa.value !== '') {
 				yoa.style.boxShadow = '';
-			} else if (yoa.value >= 2015) {
+			} 
+			 if (yoa.value >= 2015) {
 				yoaError.style.display = 'none';
-			} else if (yoa.value <= new Date().getFullYear()) {
+			}  if (yoa.value <= new Date().getFullYear()) {
 				yoaError.style.display = 'none';
 			}
 		};
