@@ -3,15 +3,27 @@ import Topbar from './lib-component/topbar';
 import './styles/profileDetail.css';
 
 export class profileDetail extends Component {
-	continue = (e) => {
-		e.preventDefault();
-		this.props.nextStep();
-	};
-
 	back = (e) => {
 		e.preventDefault();
 		this.props.prevStep();
 	};
+	continue = (e) => {
+		const profileImg = document.getElementById('inpFile');
+		const imageRegex = /([/|.|\w|\s])*\.(?:jpg|gif|png|bmp)/
+		if(profileImg.value === ''){
+			alert('please select your profile pic')
+
+		}
+		else if (!imageRegex.test(profileImg.value)){
+			alert('only images with .png .jpg .gif and .bmp are allowed')
+		}
+		else{
+			e.preventDefault();
+			this.props.nextStep();
+
+		}
+	};
+
 	render() {
 		const { values, profileImageHandler,descriptionHandler } = this.props;
 		return (

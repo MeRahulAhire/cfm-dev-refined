@@ -4,16 +4,12 @@ import './styles/collegeDetail.css';
 import LocationInput from './lib-component/locationInput';
 export class collegeDetail extends Component {
 	continue = (e) => {
-		const { values } = this.props
 		const pacInput = document.getElementById('pac-input');
 		const branch = document.getElementById('branch');
 		const yoa = document.getElementById('yoa');
 		const yoaError = document.getElementById('yoa-error');
-		// const collegeSpaceErr = document.getElementById('college-space-err')
 		const collegeFormatErr = document.getElementById('college-format');
 		const commaRegex = /[,]/;
-		// const spaceRegex = /[ X]/
-		const yoaRegex = /[2][0][1-2][0-9]/;
 		if (pacInput.value === '' && branch.value === '' && yoa.value === '') {
 			pacInput.style.boxShadow = '0px 0px 15px 0px red';
 			branch.style.boxShadow = '0px 0px 15px 0px red';
@@ -31,70 +27,53 @@ export class collegeDetail extends Component {
 		} else if (yoa.value === '') {
 			yoa.style.boxShadow = '0px 0px 15px 0px red';
 			navigator.vibrate(100);
-		}
-		 else if(yoa.value < 2015){
-			 yoaError.style.display = "block"
-			 navigator.vibrate(100);
-		 }
-		 else if(yoa.value > new Date().getFullYear()){
-			yoaError.style.display = "block"
-			yoaError.innerHTML = "Please enter current valid year"
+		} else if (yoa.value < 2015) {
+			yoaError.style.display = 'block';
 			navigator.vibrate(100);
+		} else if (yoa.value > new Date().getFullYear()) {
+			yoaError.style.display = 'block';
+			yoaError.innerHTML = 'Please enter current valid year';
+			navigator.vibrate(100);
+		} else if (isNaN(yoa.value)) {
+			yoaError.style.display = 'block';
+			yoaError.innerHTML = 'Please only enter numbers';
 		}
-		else if(isNaN(yoa.value)){
-			yoaError.style.display = "block"
-			yoaError.innerHTML = "Please only enter numbers"
-		}
-		else {
-			// values.CollgeName = document.getElementById('pac-input').value.trim()
-			document.getElementById('branch').value.trim()
+		 else {
 			e.preventDefault();
 			this.props.nextStep();
 		}
 	};
 	render() {
-		const errorReset = () => {
+		const colErrorReset = () => {
 			const pacInput = document.getElementById('pac-input');
 			const branch = document.getElementById('branch');
 			const yoa = document.getElementById('yoa');
 			const yoaError = document.getElementById('yoa-error');
-			// const collegeSpaceErr = document.getElementById('college-space-err')
 			const collegeFormatErr = document.getElementById('college-format');
 			const commaRegex = /,/;
-			// const spaceRegex = /[ X]/
 			if (pacInput.value !== '') {
 				pacInput.style.boxShadow = '';
 			} else if (commaRegex.test(pacInput.value)) {
-				collegeFormatErr.style.display = "none";
+				collegeFormatErr.style.display = 'none';
 			}
 			if (branch.value !== '') {
 				branch.style.boxShadow = '';
 			}
 			if (yoa.value !== '') {
 				yoa.style.boxShadow = '';
+			} else if (yoa.value >= 2015) {
+				yoaError.style.display = 'none';
+			} else if (yoa.value <= new Date().getFullYear()) {
+				yoaError.style.display = 'none';
 			}
-			// else if(!isNaN(yoa.value)){
-			// 	yoaError.style.display = "none"
-			// 	// yoaError.innerHTML = "Please only enter numbers"
-			// }
-			else if(yoa.value >= 2015){
-				yoaError.style.display = "none"
-			}
-			else if(yoa.value <= new Date().getFullYear()){
-				yoaError.style.display = "none"
-			}
-			
-			// else{
-			// 	return null
-			// }
 		};
 		const { values, handleChange, CollegeNameHandler } = this.props;
-		
+
 		return (
 			<div>
 				<Topbar />
 				<div className="signup-bg col">
-					<div className="signup-container" onChange={errorReset}>
+					<div className="signup-container" onChange={colErrorReset}>
 						<div className="college-heading">Register With CFM</div>
 						<div className="college-search">
 							Select Your College:
