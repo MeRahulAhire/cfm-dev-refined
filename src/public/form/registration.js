@@ -28,6 +28,7 @@ export class Registration extends Component {
       Password:'',
       
       ProfilePic:blankUser,
+      ImageLoc:'',
       Description:''
     };
 
@@ -68,6 +69,7 @@ export class Registration extends Component {
 			});
   }
   profileImageHandler = (e) => {
+    this.setState({ImageLoc: e.target.value})
     const reader = new FileReader();
     reader.onload = () =>{
       if(reader.readyState === 2){
@@ -81,8 +83,8 @@ export class Registration extends Component {
   }
   render() {
         const { step } = this.state;
-        const {  Branch, CollegeName, YearOfAdmission, FirstName, LastName, Gender, DOB, Email, Phone, CountryFlag, CountryCode, Username, Password, ProfilePic, Description } = this.state;
-        const values = { Branch, CollegeName, YearOfAdmission, FirstName, LastName, Gender, DOB, Email, Phone, CountryFlag, CountryCode, Username, Password, ProfilePic, Description };
+        const {  Branch, CollegeName, YearOfAdmission, FirstName, LastName, Gender, DOB, Email, Phone, CountryFlag, CountryCode, Username, Password, ProfilePic, ImageLoc, Description } = this.state;
+        const values = { Branch, CollegeName, YearOfAdmission, FirstName, LastName, Gender, DOB, Email, Phone, CountryFlag, CountryCode, Username, Password, ProfilePic, ImageLoc, Description };
         switch(step){
           case 1:
             return(

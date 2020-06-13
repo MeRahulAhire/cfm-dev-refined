@@ -11,8 +11,8 @@ export class userDetail extends Component {
 		const lastName = document.getElementById('last-name');
 		const gender = document.getElementById('gender');
 		const dob = document.getElementById('dob');
-		const dobError = document.getElementById('dob-error')
-		const dateRegex = /^(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\/|-|\.)(?:0?[13-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/|-|\.)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})$/
+		// const dobError = document.getElementById('dob-error')
+		// const dateRegex = /^(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\/|-|\.)(?:0?[13-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/|-|\.)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})$/
 		if (firstName.value === "" && lastName.value === "" && gender.value === "" && dob.value === "") {
 			firstName.style.boxShadow = '0px 0px 15px 0px red';
 			lastName.style.boxShadow = '0px 0px 15px 0px red';
@@ -39,9 +39,9 @@ export class userDetail extends Component {
 			dob.style.boxShadow = '0px 0px 15px 0px red';
 			navigator.vibrate(100);
 		}
-		else if(!dateRegex.test(dob.value)){
-			dobError.style.display = "block"
-		}
+		// else if(!dateRegex.test(dob.value)){
+		// 	dobError.style.display = "block"
+		// }
 		
 		else {
 			e.preventDefault();
@@ -56,8 +56,8 @@ export class userDetail extends Component {
 		const lastName = document.getElementById('last-name');
 		const gender = document.getElementById('gender');
 		const dob = document.getElementById('dob');
-        const dobError = document.getElementById('dob-error');
-		const dateRegex = /^(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\/|-|\.)(?:0?[13-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/|-|\.)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})$/
+        // const dobError = document.getElementById('dob-error');
+		// const dateRegex = /^(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\/|-|\.)(?:0?[13-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/|-|\.)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})$/
 		 if(firstName.value !== "") {
 			firstName.style.boxShadow = '';
 		}
@@ -70,9 +70,9 @@ export class userDetail extends Component {
 		 if(dob.value !== "") {
 			dob.style.boxShadow = '';
 		}
-		 if(dateRegex.test(dob.value)){
-			dobError.style.display = "none"
-		}
+		//  if(dateRegex.test(dob.value)){
+		// 	dobError.style.display = "none"
+		// }
 		}
 		return (
 			<div>

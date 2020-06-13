@@ -15,7 +15,7 @@ export class credential extends Component {
 		const username = document.getElementById('username')
 		const password = document.getElementById('password')
 		const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
-		const usernameRegex = /^[a-z0-9_.]{3,16}$/
+		const usernameRegex = /^[a-zA-Z0-9_.]{1,16}$/
 		const emailError = document.getElementById('email-error')
 		const usernameError = document.getElementById('username-error')
 		if(email.value === '' && country.value === '' && tel.value === '' && username.value ==='' && password.value === ''){

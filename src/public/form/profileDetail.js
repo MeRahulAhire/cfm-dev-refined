@@ -8,24 +8,20 @@ export class profileDetail extends Component {
 		this.props.prevStep();
 	};
 	continue = (e) => {
-		const profileImg = document.getElementById('inpFile');
-		const imageRegex = /([/|.|\w|\s])*\.(?:jpg|gif|png|bmp)/
-		if(profileImg.value === ''){
-			alert('please select your profile pic')
-
-		}
-		else if (!imageRegex.test(profileImg.value)){
-			alert('only images with .png .jpg .gif and .bmp are allowed')
-		}
-		else{
+		const { values } = this.props;
+		const imageRegex = /([/|.|\w|\s])*\.(?:jpg|gif|png|bmp)/;
+		if (values.ImageLoc === '') {
+			alert('please select your profile pic');
+		} else if (!imageRegex.test(values.ImageLoc)) {
+			alert('only images with .png .jpg .gif and .bmp are allowed');
+		} else {
 			e.preventDefault();
 			this.props.nextStep();
-
 		}
 	};
 
 	render() {
-		const { values, profileImageHandler,descriptionHandler } = this.props;
+		const { values, profileImageHandler, descriptionHandler } = this.props;
 		return (
 			<div>
 				<Topbar />
@@ -38,7 +34,12 @@ export class profileDetail extends Component {
 							Add your Profile Picture:
 							<div className="add-picture">
 								<div className="image-preview">
-									<img src={values.ProfilePic} alt="" className="image-preview__image" id="profileImg" />
+									<img
+										src={values.ProfilePic}
+										alt=""
+										className="image-preview__image"
+										id="profileImg"
+									/>
 								</div>
 								<input
 									type="file"
