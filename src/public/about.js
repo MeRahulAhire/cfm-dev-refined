@@ -11,9 +11,25 @@ export class about extends Component {
 		return (
 			<div>
 				 <Helmet>
+				   	<meta charset="utf-8" />
                     <title>College Facemash - About</title>
 					<meta name="theme-color" content="#512da8"/>
-                    <link rel="canonical" href="https://collegefacemash.com/"/>
+					<link rel="canonical" href="https://collegefacemash.com/"/>
+					<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+					<meta name="description" content="Know more what College Facemash is all about..."/>
+					<meta name="title" content="College Facemash - About" />
+
+					<meta property="og:image" content="https://i.ibb.co/KXRQJc3/icon-512x512.png" />
+					<meta property="og:title" content="College Facemash - About"/>
+					<meta property="og:description" content="Know more what College Facemash is all about..."/>
+					<meta property="og:url" content="https://test.collegefacemash.com"/>
+					<meta property="og:site_name" content="College Facemash"/>
+
+					<meta name="twitter:title" content="College Facemash - About"/>
+					<meta name="twitter:description" content="Know more what College Facemash is all about..."/>
+					<meta name="twitter:image" content="https://i.ibb.co/KXRQJc3/icon-512x512.png"/>
+					<meta name="twitter:card" content="College_Facemash_about"/>
+					<meta name="twitter:image:alt" content="College Facemash Logo - Alt"/>
                  </Helmet>
 				<Navbar />
 				<section className="about-top">

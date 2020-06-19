@@ -59,6 +59,26 @@ export class login extends Component {
 					<title>College Facemash - Login</title>
 					<meta name="theme-color" content="#512da8" />
 					<meta name="description" content="Login to college Facemash" />
+
+					<meta charset="utf-8" />
+                    <title>College Facemash - Login</title>
+					<meta name="theme-color" content="#512da8"/>
+					<link rel="canonical" href="https://collegefacemash.com/"/>
+					<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+					<meta name="description" content="Login with College Facemash to continuing your virtual online College experience"/>
+					<meta name="title" content="College Facemash - Login" />
+
+					<meta property="og:image" content="https://i.ibb.co/KXRQJc3/icon-512x512.png" />
+					<meta property="og:title" content="College Facemash - Login"/>
+					<meta property="og:description" content="Login with College Facemash to continuing your virtual online College experience"/>
+					<meta property="og:url" content="https://test.collegefacemash.com"/>
+					<meta property="og:site_name" content="College Facemash"/>
+
+					<meta name="twitter:title" content="College Facemash - Login"/>
+					<meta name="twitter:description" content="Login with College Facemash to continuing your virtual online College experience"/>
+					<meta name="twitter:image" content="https://i.ibb.co/KXRQJc3/icon-512x512.png"/>
+					<meta name="twitter:card" content="College_Facemash_login"/>
+					<meta name="twitter:image:alt" content="College Facemash Logo - Alt"/>
 				</Helmet>
 				<div className="login-bg">
 					<div className="login-container">
