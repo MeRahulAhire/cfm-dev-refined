@@ -1,4 +1,4 @@
-export default function collegeDetailValidation() {
+export const collegeDetailValidation = (e) => {
     const pacInput = document.getElementById('pac-input');
 		const branch = document.getElementById('branch');
 		const yoa = document.getElementById('yoa');
@@ -33,28 +33,33 @@ export default function collegeDetailValidation() {
 			yoaError.style.display = 'block';
 			yoaError.innerHTML = 'Please only enter numbers';
 		} 
+		else {
+			e.preventDefault();
+			this.props.nextStep();
+		}
 }
 
-// export default function colErrorReset(){
-//     const pacInput = document.getElementById('pac-input');
-//     const branch = document.getElementById('branch');
-//     const yoa = document.getElementById('yoa');
-//     const yoaError = document.getElementById('yoa-error');
-//     const collegeFormatErr = document.getElementById('college-format');
-//     const commaRegex = /,/;
-//     if (pacInput.value !== '') {
-//         pacInput.style.boxShadow = '';
-//     } else if (commaRegex.test(pacInput.value)) {
-//         collegeFormatErr.style.display = 'none';
-//     }
-//     if (branch.value !== '') {
-//         branch.style.boxShadow = '';
-//     }
-//     if (yoa.value !== '') {
-//         yoa.style.boxShadow = '';
-//     } else if (yoa.value >= 2015) {
-//         yoaError.style.display = 'none';
-//     } else if (yoa.value <= new Date().getFullYear()) {
-//         yoaError.style.display = 'none';
-//     }
-// }
+export const colErrorReset = () => {
+	const pacInput = document.getElementById('pac-input');
+	const branch = document.getElementById('branch');
+	const yoa = document.getElementById('yoa');
+	const yoaError = document.getElementById('yoa-error');
+	const collegeFormatErr = document.getElementById('college-format');
+	const commaRegex = /,/;
+	if (pacInput.value !== '') {
+		pacInput.style.boxShadow = '';
+	} else if (commaRegex.test(pacInput.value)) {
+		collegeFormatErr.style.display = 'none';
+	}
+	if (branch.value !== '') {
+		branch.style.boxShadow = '';
+	}
+	if (yoa.value !== '') {
+		yoa.style.boxShadow = '';
+	} 
+	 if (yoa.value >= 2015) {
+		yoaError.style.display = 'none';
+	}  if (yoa.value <= new Date().getFullYear()) {
+		yoaError.style.display = 'none';
+	}
+};

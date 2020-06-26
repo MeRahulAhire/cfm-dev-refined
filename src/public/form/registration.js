@@ -7,6 +7,7 @@ import blankUser from '../assets/blank_user.webp'
 import phoneIcon from '../assets/phone_icon.png'
 import ReviewForm from './reviewForm'
 
+
 export class Registration extends Component {
   
       state = {
